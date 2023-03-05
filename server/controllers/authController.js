@@ -38,7 +38,7 @@ export const login = async (req, res, next) => {
 
     const { password, ...info } = user._doc;
     res
-      .cookie('accessToken', {
+      .cookie('accessToken', token, {
         httpOnly: true,
       })
       .status(200)
@@ -48,4 +48,13 @@ export const login = async (req, res, next) => {
   }
 };
 
-export const logout = async (req, res, next) => {};
+// 3. Logout
+export const logout = async (req, res, next) => {
+  res
+    .clearCookie('accessToken', {
+      sameSite: 'none',
+      secure: true,
+    })
+    .status(200)
+    .send('User has been loggedout');
+};
