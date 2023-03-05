@@ -33,7 +33,10 @@ const Navbar = () => {
           <span className="dot">.</span>
         </div>
         <div className="links">
-          <span>Sign In</span>
+          <Link className="link" to="/login">
+            {' '}
+            <span>Sign In</span>
+          </Link>
           {!currentUser?.isSeller && <span>Become a seller</span>}
           {!currentUser && <button>Join</button>}
           {currentUser ? (
