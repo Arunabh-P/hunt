@@ -1,0 +1,13 @@
+.comapny-section {
+  .logo-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a {
+      img {
+        width: 180px;
+        padding: 30px;
+      }
+    }
+  }
+}

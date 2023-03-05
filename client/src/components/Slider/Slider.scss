@@ -1,0 +1,71 @@
+.sliderCard {
+  width: 220px;
+  height: 300px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(166, 166, 171, 0.2) 0px 7px 29px 0px;
+  margin: 10px 20px 10px 0px;
+  img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .description {
+    font-weight: 300;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(30, 28, 29);
+  }
+  .headline {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(30, 28, 29);
+  }
+}
+
+.projectCard {
+  width: 220px;
+  height: 320px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: rgba(166, 166, 171, 0.2) 0px 7px 29px 0px;
+  margin: 10px 20px 10px 0px;
+  img {
+    width: 220px;
+    height: 235px;
+    object-fit: cover;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    height: 85px;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .texts {
+      h2 {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}
