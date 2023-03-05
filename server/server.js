@@ -9,10 +9,12 @@ import messageRoute from './routes/messageRoute.js';
 import reviewRoute from './routes/reviewRoute.js';
 import authRoute from './routes/authRoute.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
 const app = express();
 dotenv.config();
 mongoose.set('strictQuery', true);
+
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO);
@@ -22,6 +24,7 @@ const connect = async () => {
   }
 };
 
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 app.use(express.json()); //allow app to take input from users
 app.use(cookieParser());
 
