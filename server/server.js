@@ -29,7 +29,7 @@ app.use(express.json()); //allow app to take input from users
 app.use(cookieParser());
 
 app.use('/api/auth', authRoute);
-app.use('/api/user', userRoute);
+app.use('/api/users', userRoute);
 app.use('/api/gigs', gigRoute);
 app.use('/api/conversations', conversationRoute);
 app.use('/api/orders', orderRoute);
