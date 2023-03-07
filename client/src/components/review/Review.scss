@@ -28,9 +28,10 @@
     display: flex;
     gap: 5px;
 
-    img {
-      height: 14px;
-      width: 14px;
+    .starIcon {
+      color: #ffc108;
+      height: 20px;
+      width: 20px;
     }
 
     span {

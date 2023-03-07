@@ -1,8 +1,9 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-
+import noAvatar from '../../Public/images/noavatar.jpg';
 import requestUrl from '../../utils/requestUrl';
 import './Review.scss';
+import { AiFillStar } from 'react-icons/ai';
 const Review = ({ review }) => {
   const { isLoading, error, data } = useQuery({
     queryKey: [review.userId],
@@ -19,7 +20,7 @@ const Review = ({ review }) => {
         'error'
       ) : (
         <div className="user">
-          <img className="pp" src={data.img || '/img/noavatar.jpg'} alt="" />
+          <img className="pp" src={data.img || noAvatar} alt="" />
           <div className="info">
             <span>{data.username}</span>
             <div className="country">
@@ -32,18 +33,11 @@ const Review = ({ review }) => {
         {Array(review.star)
           .fill()
           .map((item, i) => (
-            <img src="/img/star.png" alt="" key={i} />
+            <AiFillStar className="starIcon" key={i} />
           ))}
         <span>{review.star}</span>
       </div>
       <p>{review.desc}</p>
-      <div className="helpful">
-        <span>Helpful?</span>
-        <img src="/img/like.png" alt="" />
-        <span>Yes</span>
-        <img src="/img/dislike.png" alt="" />
-        <span>No</span>
-      </div>
     </div>
   );
 };
