@@ -3,6 +3,7 @@ import Review from '../review/Review';
 import './Reviews.scss';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import requestUrl from '../../utils/requestUrl';
+import { AiFillStar } from 'react-icons/ai';
 
 const Reviews = ({ gigId }) => {
   const queryClient = useQueryClient();
@@ -37,9 +38,14 @@ const Reviews = ({ gigId }) => {
         ? 'something went wrong'
         : data.map((review) => <Review key={review._id} review={review} />)}
       <div className="add">
-        <h3>Add a review</h3>
+        <h3 className="reviewHeadline">Add a review</h3>
         <form action="" className="addForm" onSubmit={handleSubmit}>
-          <input type="text" placeholder="write your opinion" />
+          <textarea
+            type="text"
+            cols="30"
+            rows="3"
+            placeholder="write your opinion"
+          />
           <select name="" id="">
             <option value={1}>1</option>
             <option value={2}>2</option>

@@ -32,7 +32,7 @@ const GigCard = ({ item }) => {
             </div>
           )}
 
-          <p>{item.desc}</p>
+          <p>{item.shortDesc}</p>
           <div className="star">
             <AiFillStar className="starIcon" />
             <span>

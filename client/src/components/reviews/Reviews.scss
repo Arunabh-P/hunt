@@ -7,23 +7,30 @@
     flex-direction: column;
     gap: 20px;
 
+    .reviewHeadline {
+      font-weight: 300;
+    }
     .addForm {
       display: flex;
       flex-direction: column;
       gap: 20px;
 
-      input {
-        padding: 20px;
+      textarea {
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgb(219, 212, 212);
       }
 
       select {
-        width: 200px;
-        padding: 20px;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border: 1px solid rgb(219, 212, 212);
         align-self: flex-end;
       }
       button {
         align-self: flex-end;
         width: 100px;
+        border-radius: 10px;
         border: none;
         padding: 10px;
         color: white;

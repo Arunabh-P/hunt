@@ -17,6 +17,7 @@ import Reviews from '../../components/reviews/Reviews';
 
 const Gig = () => {
   const { id } = useParams();
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
   // Carousel
   const [index, setIndex] = useState(0);
@@ -31,6 +32,9 @@ const Gig = () => {
         return res.data;
       }),
   });
+
+  const userId = data?.userId;
+
   const {
     isLoading: isLoadingUser,
     error: errorUser,
@@ -38,9 +42,10 @@ const Gig = () => {
   } = useQuery({
     queryKey: ['user'],
     queryFn: () =>
-      requestUrl.get(`/users/${data.userId}`).then((res) => {
+      requestUrl.get(`/users/${userId}`).then((res) => {
         return res.data;
       }),
+    enabled: !!userId,
   });
 
   return (
@@ -90,7 +95,6 @@ const Gig = () => {
                 ))}
               </Carousel>
             </>
-            <h2>About This Gig</h2>
             <p>{data.desc}</p>
             {isLoadingUser ? (
               'loading'
@@ -98,7 +102,6 @@ const Gig = () => {
               'something wentwrong'
             ) : (
               <div className="seller">
-                <h2>About The Seller</h2>
                 <div className="user">
                   <img src={dataUser.img || noAvatar} alt="" />
                   <div className="info">
@@ -146,7 +149,7 @@ const Gig = () => {
                 </div>
               </div>
             )}
-            <Reviews gigId={id} />
+            {currentUser?.isSeller ? '' : <Reviews gigId={id} />}
           </div>
 
           <div className="right mt-5">
